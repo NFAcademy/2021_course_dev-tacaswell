@@ -1,0 +1,42 @@
+* Matplotlib: From Exploration To Final Figure
+
+** Just Plot it
+
+Goals:
+ - set up the scenario
+ - familiarize student with the data structure we will be working with
+ - "just put in on the screen"
+ - x-array helper
+ - write your own helper(s)
+
+** Do some fitting and smoothing
+
+Goals:
+
+ - data reduction (it is all just arrays!)
+ - use of structured data (xarray, pandas) to track results
+ - write helper functions (to do reduction)
+
+## Lesson 2:
+- plot the offset data labeled with derived values
+
+Learning Goals:
+
+1. ax.annotation exists and is very powerful
+2. (built in) latex support exists
+3. (usetex) latex support exists
+4. write helper functions  (to do plotting)
+
+## Lesson 3:
+
+- put the axes from Lesson 2 and Lesson 1 in same figure
+- use subplots
+- use add_axes
+- use subplot_mosaic
+- use constrained_layout
+- adjust figure size
+
+Learning Goals:
+
+1. Figure layout tools
+2. write helper function to make paper figure
