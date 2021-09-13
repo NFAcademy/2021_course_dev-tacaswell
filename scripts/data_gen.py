@@ -100,8 +100,28 @@ def get_data(N=25, seed=19680808):
     return d
 
 
-def curve(t, A, zeta, omega, phi):
-    """Function for fitting damped oscillators"""
+def curve(t, /, A, zeta, omega, phi):
+    """
+    Function for evaluating a damped sinusoidal
+
+    Implements the form .. math::
+
+       A e^{-\zeta\omega_0t} \sin\left(\sqrt{1 - \zeta^2}\omega_0t + \varphi\right)
+
+    Parameters
+    ----------
+    t : array
+       The times to evaluate the function at
+
+    A, zeta, omega, phi : float
+        The function parameters
+
+    Returns
+    -------
+    array
+        The values of the function at times *t* with the given parameters.
+
+    """
     return (
         A * np.exp(-t * zeta * omega) * np.sin(np.sqrt(1 - zeta ** 2) * omega * t + phi)
     )
@@ -133,6 +153,10 @@ class Params(namedtuple("Params", "A,zeta,omega,phi")):
 def fit(m):
     """
     Given single oscillator decay, fit it.
+
+    Parameters
+    ----------
+    m : x
     """
     t = m.coords["time"]
     z = m.values
